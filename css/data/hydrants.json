@@ -1,50 +1,3 @@
-// Initialize map
-var map = L.map('map').setView([31.04, -84.88], 14);
-
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-// Load hydrants JSON
-fetch('data/hydrants.json')
-  .then(response => response.json())
-  .then(data => {
-    var markers = [];
-
-    data.forEach(h => {
-      var color = h.flow >= 1500 ? 'green' :
-                  h.flow >= 1000 ? 'orange' : 'red';
-
-      var marker = L.circleMarker([h.latitude, h.longitude], {
-        radius: 8,
-        color: color,
-        fillOpacity: 0.8
-      }).addTo(map);
-
-      marker.bindPopup(
-        `<b>ID:</b> ${h.id}<br>` +
-        `<b>Flow:</b> ${h.flow} GPM<br>` +
-        `<b>Pressure:</b> ${h.pressure} psi<br>` +
-        `<b>Status:</b> ${h.status}<br>` +
-        `<b>Last Inspection:</b> ${h.last_inspected}<br>` +
-        `<b>Location:</b> ${h.location_description}`
-      );
-
-      markers.push({marker: marker, id: h.id, status: h.status.toLowerCase()});
-    });
-
-    document.getElementById('search').addEventListener('input', function() {
-      var query = this.value.toLowerCase();
-      markers.forEach(m => {
-        if (m.id.toLowerCase().includes(query) || m.status.includes(query)) {
-          m.marker.addTo(map);
-        } else {
-          map.removeLayer(m.marker);
-        }
-      });
-    });
-  });
 [
   {
     "id": "H101",
@@ -73,48 +26,6 @@ fetch('data/hydrants.json')
     "accessibility": "Key needed for access",
     "last_inspected": "2025-09-30",
     "status": "Active"
-  },
-  {
-    "id": "H103",
-    "latitude": 31.043000,
-    "longitude": -84.881000,
-    "flow": 900,
-    "pressure": 55,
-    "size": "4.0",
-    "type": "Wet barrel",
-    "color": "Red",
-    "location_description": "Side of building, near parking lot",
-    "accessibility": "No obstructions",
-    "last_inspected": "2025-11-01",
-    "status": "Active"
-  },
-  {
-    "id": "H104",
-    "latitude": 31.044321,
-    "longitude": -84.884210,
-    "flow": 1600,
-    "pressure": 70,
-    "size": "4.0",
-    "type": "Wet barrel",
-    "color": "Green",
-    "location_description": "Corner of Oak St & 2nd Ave",
-    "accessibility": "Clear access",
-    "last_inspected": "2025-08-15",
-    "status": "Active"
-  },
-  {
-    "id": "H105",
-    "latitude": 31.045678,
-    "longitude": -84.885432,
-    "flow": 1100,
-    "pressure": 62,
-    "size": "2.5",
-    "type": "Dry barrel",
-    "color": "Yellow",
-    "location_description": "Near playground, fenced",
-    "accessibility": "Key needed",
-    "last_inspected": "2025-09-01",
-    "status": "Active"
   }
+  // Add more hydrants here
 ]
-
