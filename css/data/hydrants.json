@@ -55,7 +55,7 @@ fetch('data/hydrants.json')
     "size": "2.5",
     "type": "Wet barrel",
     "color": "Red",
-    "location_description": "Front corner of property",
+    "location_description": "Front corner of Main St & 1st Ave",
     "accessibility": "No obstructions",
     "last_inspected": "2025-10-12",
     "status": "Active"
@@ -69,9 +69,52 @@ fetch('data/hydrants.json')
     "size": "4.0",
     "type": "Dry barrel",
     "color": "Yellow",
-    "location_description": "Near street intersection",
-    "accessibility": "Behind fence, key needed",
+    "location_description": "Near street intersection, behind fence",
+    "accessibility": "Key needed for access",
     "last_inspected": "2025-09-30",
+    "status": "Active"
+  },
+  {
+    "id": "H103",
+    "latitude": 31.043000,
+    "longitude": -84.881000,
+    "flow": 900,
+    "pressure": 55,
+    "size": "4.0",
+    "type": "Wet barrel",
+    "color": "Red",
+    "location_description": "Side of building, near parking lot",
+    "accessibility": "No obstructions",
+    "last_inspected": "2025-11-01",
+    "status": "Active"
+  },
+  {
+    "id": "H104",
+    "latitude": 31.044321,
+    "longitude": -84.884210,
+    "flow": 1600,
+    "pressure": 70,
+    "size": "4.0",
+    "type": "Wet barrel",
+    "color": "Green",
+    "location_description": "Corner of Oak St & 2nd Ave",
+    "accessibility": "Clear access",
+    "last_inspected": "2025-08-15",
+    "status": "Active"
+  },
+  {
+    "id": "H105",
+    "latitude": 31.045678,
+    "longitude": -84.885432,
+    "flow": 1100,
+    "pressure": 62,
+    "size": "2.5",
+    "type": "Dry barrel",
+    "color": "Yellow",
+    "location_description": "Near playground, fenced",
+    "accessibility": "Key needed",
+    "last_inspected": "2025-09-01",
     "status": "Active"
   }
 ]
+
