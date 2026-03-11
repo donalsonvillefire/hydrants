@@ -45,3 +45,33 @@ fetch('data/hydrants.json')
       });
     });
   });
+[
+  {
+    "id": "H101",
+    "latitude": 31.041234,
+    "longitude": -84.882345,
+    "flow": 1200,
+    "pressure": 60,
+    "size": "2.5",
+    "type": "Wet barrel",
+    "color": "Red",
+    "location_description": "Front corner of property",
+    "accessibility": "No obstructions",
+    "last_inspected": "2025-10-12",
+    "status": "Active"
+  },
+  {
+    "id": "H102",
+    "latitude": 31.042567,
+    "longitude": -84.883678,
+    "flow": 1500,
+    "pressure": 65,
+    "size": "4.0",
+    "type": "Dry barrel",
+    "color": "Yellow",
+    "location_description": "Near street intersection",
+    "accessibility": "Behind fence, key needed",
+    "last_inspected": "2025-09-30",
+    "status": "Active"
+  }
+]
